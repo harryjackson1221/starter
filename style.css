@@ -1,9 +1,9 @@
 /*
-Theme Name: BoldGrid Starter Theme
-Author: The BoldGrid Team
-Theme URI: http://www.boldgrid.com/prime-child
-Author URI: http://www.boldgrid.com/the-team
-Description: Designed specifically for use with the BoldGrid suite of plugins, all BoldGrid themes are highly customizable, responsive to a wide range of devices, and of course, beautiful. Every BoldGrid theme includes five pre-selected color palettes and an advanced tool for creating your own unique palette. In addition, all themes feature multiple menu locations and widget areas, which are easily customizable to suit your needs. So if you're looking for a theme that looks great, feels modern and professional, and offers plenty of features to make it your own, you've chosen well.
+Theme Name: Starter
+Author: Tim Elsass
+Theme URI: http://tim.ph
+Author URI: http://tim.ph
+Description: A onepager theme designed for use with the BoldGrid Theme Framework, and the BoldGrid suite of plugins.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,243 @@ Text Domain: bgtfw
 Template: prime
 Tags: custom-background, custom-colors, custom-menu, editor-style, responsive-layout, rtl-language-support, translation-ready, boldgrid-theme-28
 */
-/*------------------------------------------------------------------------
->>> TABLE OF CONTENTS:
---------------------------------------------------------------------------*/
+*
+/* Links */
+a, a:hover, a:focus {
+	text-decoration: none;
+}
+
+/* Background cover property should be centered. */
+body.palette-primary.custom-background {
+	background-position: center;
+}
+
+/* Set the visibility to hidden to prevent flickers on load */
+.social-menu,
+.site-header,
+.site-tagline {
+	visibility: hidden;
+}
+
+/* General Layout Reset Styles */
+.hentry,
+.entry-content {
+	margin: 0;
+}
+.entry-title > a {
+	pointer-events: none;
+}
+/* Logo/Title Positioning */
+.site-branding {
+	margin-top: -30px;
+}
+/* Tagline Styles */
+.site-tagline {
+	position: absolute;
+	left: 1em;
+	right: 1em;
+	text-align: center;
+}
+
+/* Header */
+.starter-triangle {
+	position: absolute;
+}
+.header-1 {
+	padding: 0;
+	top: -4px;
+}
+
+/* Primary Nav Styles */
+.navbar .navbar-nav {
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+.navbar .navbar-collapse {
+	text-align: center;
+}
+.navbar-toggle {
+	width: 100%;
+	float: none;
+	margin-right: 0;
+}
+.navbar-toggle .icon-bar {
+	margin: 0 auto;
+}
+.menu-words {
+	font-size: 11px;
+	text-transform: uppercase;
+}
+@media only screen and ( max-width : 768px ) {
+	.navbar-default {
+		width: 30%;
+		border-color: rgba(0, 0, 0, 0);
+		margin: 0 auto;
+		margin-top: -14px;
+	}
+	.navbar-default .navbar-collapse {
+		margin-top: -15px;
+		padding-top: 14px;
+		box-shadow: none;
+		border-radius: 0 0 50px 50px;
+	}
+	/**
+	 * On mobile the letter spacing should shrink smaller to avoid overflowing
+	 * the triangle.  We will use the element's em for appropriate resizing.
+	 */
+	.palette-primary .site-title {
+		letter-spacing: .2em;
+	}
+}
+.logged-in .navbar-scrolled {
+	top: calc( 1% + 32px );
+}
+.navbar-scrolled {
+	position: fixed;
+	right: 1%;
+	top: 1%;
+	z-index: 1000;
+}
+/**
+ * Logged in users have the class .logged-in applied to the body. The bar gets
+ * absolutely position at 600px;
+ */
+@media ( max-width: 782px ) {
+	.logged-in .navbar-scrolled {
+		top: calc( 1% + 46px ); /* 46px is admin bar height on tablet/mobile */
+	}
+}
+@media only screen and ( min-width : 992px ) {
+	.row.header-6.header-7 {
+		display: flex;
+	}
+	.header-6, .header-7 {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+	}
+}
+
+/**
+ * Social Menu
+ *
+ * This gives an example of how we would vertically align something to center.
+ * One very important thing to remember is that the adminbar exists.  You should
+ * always account for the logged in user, and logged out user.
+ */
+.header-5 {
+	display: flex;
+	justify-content: center;
+}
+.social-menu .animated {
+	margin-left: -5px;
+}
+.social-menu {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	position: fixed;
+	left: 5px;
+	cursor: pointer;
+	z-index: 888;
+}
+.logged-in .social-menu {
+	height: calc( 100% - 32px ); /* 32px is admin bar height */
+}
+.social-menu .list-inline > li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+	margin: 0;
+}
+.social-menu li > a {
+	width: 2em;
+}
+.social-menu li:first-child {
+	border-top-right-radius: 1em;
+}
+.social-menu li:last-child {
+	border-bottom-right-radius: 1em;
+}
+.social-menu .menu-items {
+	opacity: .7;
+}
+.social-menu .menu-items:hover {
+	opacity: 1;
+}
+/**
+ * Logged in users have the class .logged-in applied to the body. The bar gets
+ * absolutely position at 600px;
+ */
+@media ( max-width: 782px ) {
+	.logged-in .social-menu {
+		height: calc( 100% - 46px ); /* 46px is admin bar height on tablet/mobile */
+	}
+}
+
+/* Pricing Table Styles */
+.panel-pricing .panel-body {
+	padding: 0;
+	padding-top: 15px
+}
+.panel-pricing .panel-footer {
+	padding: 20px 15px;
+}
+.panel-pricing .button-primary {
+	margin-top: -5px;
+}
+
+/* Contact Us - @todo */
+
+/* Button Styles */
+.palette-primary .button-primary {
+	line-height: 2.5;
+}
+.continue-reading {
+	cursor: pointer;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 90%;
+	left: 50%;
+	color: black;
+	opacity: .9;
+	z-index: 999;
+}
+.continue-reading:hover {
+	font-size: 1.5em;
+	opacity: 1;
+}
+
+/* Footer Styles */
+.site-footer {
+	padding: 2em 0;
+	text-align: center;
+}
+.entry-footer {
+	position: absolute;
+	padding: .5em;
+	left: 1%;
+	right: 1%;
+	z-index: 999;
+}
+.goup-container,
+.entry-footer .fa-pencil {
+	opacity: 0.6;
+}
+.goup-container:hover,
+.entry-footer .fa-pencil:hover {
+	opacity: 1;
+}
+.post-edit-link {
+	padding: 5px 30px;
+	margin-left: -20px;
+}
+/* Testimonials */
+.carousel-control.right,
+.carousel-control.left {
+	background-image: none !important;
+	line-height: .35;
+	font-size: 250px;
+}
